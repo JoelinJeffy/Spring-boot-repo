@@ -1,0 +1,45 @@
+type Student{
+    id:ID!
+    name:String!
+    age:String!
+    dob:String!
+}
+type Department{
+    id:ID!
+    name:String!
+    numberOfStudents:Int!
+    students:[Student]!
+}
+input StudentInput {
+    id: ID!
+    name: String!
+    age: String!
+    dob: String!
+
+}
+
+input DepartmentInput {
+    id: ID!
+    name: String!
+    numberOfStudents: Int!
+}
+type Query{
+    getAllStudent:[Student!]!
+    getStudentById(id:ID!):Student!
+    getAllDepartment:[Department!]!
+    getDepartmentById(id:ID!):Department!
+    getStudentByDepartment(name:String!):[Student]!
+}
+type Mutation{
+    createStudent(id:ID!,name:String!
+        age:String!,
+        dob:String!,departmentName:String!):Student!
+    updateStudent(name:String!
+        age:String!
+        dob:String!):String!
+    createDepartment(id:ID!,name:String!,numberOfStudents:Int!):Department!
+
+    updateDepartment(id:ID!,name:String!,numberOfStudents:Int!):String!
+
+
+}
